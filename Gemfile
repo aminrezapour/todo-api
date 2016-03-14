@@ -40,3 +40,5 @@ gem 'bcrypt'
 gem 'figaro', '1.0'
 
 gem 'devise'
+
+gem 'active_model_serializers'
