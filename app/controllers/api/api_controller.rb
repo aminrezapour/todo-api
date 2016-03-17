@@ -8,7 +8,7 @@ class Api::ApiController < ApplicationController
    private
    def authenticated?
      authenticate_or_request_with_http_basic do |email, password|
-       User.where( email: email).first.valid_password?(password)
+       @current_user = User.find_by_email(email) if User.where( email: email).first.valid_password?(password)
      end
    end
 
